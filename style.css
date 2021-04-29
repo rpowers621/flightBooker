@@ -1,0 +1,61 @@
+.container{
+  height: 100%;
+  width: 85%;
+  resize:none;
+}
+.header{
+  margin-top: 7%;
+  display: inline-block;
+  height: 15%;
+  width: 85%;
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: red;
+}
+.flight-control{
+  display: inline-block;
+  height: 15%;
+  width: 85%;
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: blue;
+}
+.image-text{
+
+  position: relative;
+  padding: 3.5%;
+  width: 85%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+button{
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+}
+
+input{
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 10px;
+
+}
+select{
+  margin-left: 60px;
+  width: 200px;
+  font-size: 10px;
+}
+.img-text{
+  position: absolute;
+  left:80px;
+  top: 105px;
+  font-size: 95px;
+  color: white;
+  text-shadow: 3px 3px black;
+}
