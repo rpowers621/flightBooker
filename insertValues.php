@@ -11,13 +11,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-/*$sql = "INSERT INTO customer (firstname, lastname, email)
-VALUES ('John', 'Doe', 'johnd@gmail.com')";
-
-$sql = "INSERT INTO customer (firstname, lastname, email)
-VALUES ('Jane', 'Doe', 'janed@gmail.com')";*/
-
-
 //once again you have to insert the values one by one unless want to have a lot of if statements
 $sql = "INSERT INTO inventory (rowNumber, seat)
 VALUES ('1', 'A')";
@@ -396,6 +389,12 @@ VALUES ('21', 'E')";
 
 $sql = "INSERT INTO inventory (rowNumber, seat)
 VALUES ('21', 'F')";
+
+$sql = "INSERT INTO customer (firstname, lastname, email, password)
+VALUES ('John', 'Doe', 'johnd@gmail.com', '1234')";
+
+$sql = "INSERT INTO customer (firstname, lastname, email, password)
+VALUES ('Jane', 'Doe', 'johnd@gmail.com', '0000')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
