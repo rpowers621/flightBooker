@@ -17,6 +17,8 @@ VALUES ('John', 'Doe', 'johnd@gmail.com')";
 $sql = "INSERT INTO customer (firstname, lastname, email)
 VALUES ('Jane', 'Doe', 'janed@gmail.com')";*/
 
+
+//once again you have to insert the values one by one unless want to have a lot of if statements
 $sql = "INSERT INTO inventory (rowNumber, seat)
 VALUES ('1', 'A')";
 
