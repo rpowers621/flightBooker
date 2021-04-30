@@ -390,11 +390,11 @@ VALUES (21, 'E', 'Basic', 75.00)";
 $sql = "INSERT INTO inventory (rowNumber, seat, typeof, price)
 VALUES ('21', 'F', 'Basic', 75.00)";
 
-$sql = "INSERT INTO customer (firstname, lastname, email, passwords)
-VALUES ('John', 'Doe', 'johnd@gmail.com', '1234')";
+$sql = "INSERT INTO customer (firstname, lastname, email, username, passwords)
+VALUES ('John', 'Doe', 'johnd@gmail.com', 'johnd', '1234')";
 
-$sql = "INSERT INTO customer (firstname, lastname, email, passwords)
-VALUES ('Jane', 'Doe', 'johnd@gmail.com', '0000')";
+$sql = "INSERT INTO customer (firstname, lastname, email, username, passwords)
+VALUES ('Jane', 'Doe', 'janed@gmail.com', 'janed', '0000')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
