@@ -12,7 +12,8 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-// sql to create table
+// sql to create table - when creating the tables do it one by one since they have the same variable name if not just add the if statement at the bottom three times with
+//corresponding variable names
 /*$sql = "CREATE TABLE customer (
 	id INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(30) NOT NULL,
