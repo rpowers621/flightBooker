@@ -1,4 +1,5 @@
 <?php
+//used phpMyAdmin 
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +11,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
+//create the tables one by one or can change the variable name and add corresponding if statements
 // sql to create table
 $sql = "CREATE TABLE customer (
 	id INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
