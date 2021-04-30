@@ -1,4 +1,5 @@
 <?php
+//can just create the database via phpMyAdmin on your local host
 $servername = "localhost";
 $username = "root";
 $password = "";
