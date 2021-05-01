@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "booking";
@@ -9,7 +9,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}*/
+include("connect.php");
+$conn;
 
 //when inserting values into database must do it one by one or can change the name of the variable to be all different and add the corresponding if statements
 $sql = "INSERT INTO inventory (rowNumber, seat, typeof, price)
