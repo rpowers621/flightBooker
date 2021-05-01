@@ -33,7 +33,7 @@ $result1 = $conn->query($sql1);
 echo "<h3>Customers</h3>";
 if ($result1->num_rows > 0) {
      // output data of each row
-	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email/th><th>Password/th></tr>";
+	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Password</th></tr>";
      while($row1 = $result1->fetch_assoc()) {
 		 $id=$row1["id"];
 		 $firstName=$row1["firstname"];
