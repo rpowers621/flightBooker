@@ -1,6 +1,6 @@
 <?php
 //used phpMyAdmin 
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "booking";
@@ -10,7 +10,10 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
-}
+}*/
+include("connect.php");
+$conn;
+
 //create the tables one by one or can change the variable name and add corresponding if statements
 // sql to create table
 $sql = "CREATE TABLE customer (
