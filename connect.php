@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","jtavera1","jtavera1","jtavera1");
+$conn = mysqli_connect("localhost","jtavera1","jtavera1","jtavera1");
 
 // Check connection
 if (mysqli_connect_errno()) {
