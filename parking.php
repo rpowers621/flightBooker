@@ -8,7 +8,7 @@
 table, th, td {
   border: 3px solid white;
   border-spacing: 15px;
-  padding: 5em;
+  padding: 3em;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
