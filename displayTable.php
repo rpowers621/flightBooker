@@ -94,6 +94,24 @@ if ($result3->num_rows > 0) {
      echo "0 results";
 }
 
+$sql4 = "SELECT available ,price, spotnumber,lengthoftime,type FROM parking";
+$result4 = $conn->query($sql4);
+echo "<h3>Spots</h3>";
+if ($result4->num_rows > 0) {
+     // output data of each row
+	echo "<table><tr><th>Availability</th><th>Price</th><th>Spot</th><th>Time</th><th>Type</th></tr>";
+     while($row4 = $result4->fetch_assoc()) {
+		 $avail=$row4["available"];
+		 $Price=$row4["price"];
+		 $Spot=$row4["spotnumber"];
+		 $time=$row4["lengthoftime"];
+		 $typeof =$row4["type"];
+         echo "<tr><td>".$avail."</td><td>".$Price."</td><td>".$Spot."</td><td>".$time."</td><td>".$typeof."</td></tr>";
+     }
+	 echo "</table>";
+} else {
+     echo "0 results";
+}
 $conn->close();
 ?>
 </body>
