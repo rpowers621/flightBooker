@@ -28,12 +28,7 @@
        echo $user;  ?> <img id="logo" src="gsu.jpeg" width="48" height="48"> </a>
      </div>
       </div>
-    <?php
-      $total = $_POST['total'];
-      echo "<h4> Amount Due: $".$total."</h4>";
 
-
-    ?>
 	<div class = "card">
 		<form>
 		<h1 class = "card__title"> Enter Billing Address</h1>
@@ -74,7 +69,10 @@
 			>
 			</div>
         <h1 class="card__title">Enter Payment Information</h1>
-
+        <?php
+          $total = $_POST['total'];
+          echo "<h3> Amount Due: $".$total."</h3>";
+        ?>
 
 		<div class = "card_row">
 			<label for="cardName" class="card__label">Name on Card</label>
@@ -115,6 +113,7 @@
               id="cardCcv"
               placeholder="xxx"
             />
+            <input type="submit" name="" value="Place Order">
           </div>
           <div class="card__col card__brand"><i id="cardBrand"></i></div>
         </div>

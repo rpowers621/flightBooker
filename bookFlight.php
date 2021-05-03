@@ -22,13 +22,13 @@
         $date = $_POST['date'];
         echo $date;
          ?>
-         <a href="#">Book Parking</a>
+         <a href="parking.php">Book Parking</a>
 
          <a href="register.php">Sign Up</a>
 
          <a href="login.php">Login</a>
 
-         <a href="#">Cart</a>
+         <a href="#">Admin</a>
 
         <a href="profile.php"> <?php
 

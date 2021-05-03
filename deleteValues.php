@@ -13,7 +13,7 @@ if (!$conn) {
 }
 
 // sql to delete a record
-$sql = "DELETE FROM inventory WHERE id=2";
+$sql = "DELETE FROM customer WHERE passwords = 1234";
 
 if (mysqli_query($conn, $sql)) {
   echo "Record deleted successfully";

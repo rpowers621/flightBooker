@@ -12,6 +12,7 @@ table, th, td {
 </style>
   </head>
   <body>
+        <a href="main.php">Back to Main Page</a>
   <div class="container" style="min-width: 1000px;">
       <div class="header">
         GSU Airlines
@@ -40,7 +41,7 @@ table, th, td {
   <tr>
     <th rowspan = 4 width = 10%>Lobby</th>
     <th>Handicap</th>
-    <th colspan = 5>Regular</th> 
+    <th colspan = 5>Regular</th>
     <th>Short</th>
   </tr>
   <tr>
@@ -71,10 +72,15 @@ table, th, td {
 	<td id = "21" onclick="checkAvail('21')">21</td>
   </tr>
 </table>
+<div id="selected-spot">
+
+</div>
 	<div class="put-to-cart">
           <div id="selected-seat"> </div>
-          <button type="button" name="button" onclick="toAddOrNotToAdd">Add to Cart</button>
-          <button type="button" name="button">Continue to Checkout</button>
+          <form id="select-seat" name="select-seat" method="post" action="chkout-parking.php">
+              <input type="hidden" name="seat-selected" id="seat-selected" value="">
+              <input type="submit" name="" value="Add to Cart">
+            </form>
         </div>
 	<?php
     $servername = "localhost";
@@ -84,21 +90,17 @@ table, th, td {
     $conn = mysqli_connect($servername,$username2,$password,$dbname);
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }else{
-    echo "Connected successfully";
     }
-    $sql = "SELECT price, spotnumber, available,lengthoftime,type FROM parking";
+    $sql = "SELECT spotnumber, available FROM parking";
     $result = mysqli_query($conn, $sql);
 
      if (mysqli_num_rows($result) > 0) {
   // output data of each row
      while($row = mysqli_fetch_assoc($result)) {
            if ($row['available']==1) {
-             $spot =  $row['spotnumber'];
-             $row =  $row['type'];
-             $tdID = $spot.$row; ?>
+             $spot =  $row['spotnumber']; ?>
             <script type="text/javascript">
-            var cell = document.getElementById("<?php echo $tdID ?>");
+            var cell = document.getElementById("<?php echo $spot ?>");
             cell.style.background="gray";
             cell.style.pointerEvents = 'none';
             </script> <?php
@@ -107,11 +109,12 @@ table, th, td {
          }
     }?>
     <script type="text/javascript">
-          const spot
+          var spot
 
           function checkAvail(id){
-             spot = id;
-            document.getElementById("selected-spot").innerHTML= spot+" is available";
+            spot = id;
+            document.getElementById("selected-spot").innerHTML= "Parking spot "+spot+" is available";
+            document.getElementById('seat-selected').value = spot;
           }
 
           function toAddOrNotToAdd(){
