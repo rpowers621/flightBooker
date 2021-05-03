@@ -135,7 +135,29 @@ $sql2 = "INSERT INTO customer (firstname, lastname, email, username, passwords)
 VALUES ('John', 'Doe', 'johnd@gmail.com', 'johnd', '1234'),
 ('Jane', 'Doe', 'janed@gmail.com', 'janed', '0000')";
 
-
+$sql4 = "INSERT INTO parking (available, price, spotnumber, lengthoftime,type)
+VALUES (1, 60, 1, 30,'Handicap'),
+(1, 60, 2, 30,'Handicap'),
+(1, 60, 3, 30,'Handicap'),
+(1, 45, 4, 30,'Regular'),
+(1, 45, 5, 30,'Regular'),
+(1, 45, 6, 30,'Regular'),
+(1, 45, 7, 30,'Regular'),
+(1, 45, 8, 30,'Regular'),
+(1, 45, 9, 30,'Regular'),
+(1, 45, 10, 30,'Regular'),
+(1, 45, 11, 30,'Regular'),
+(1, 45, 12, 30,'Regular'),
+(1, 45, 13, 30,'Regular'),
+(1, 45, 14, 30,'Regular'),
+(1, 30, 15, 15,'Short'),
+(1, 30, 16, 15,'Short'),
+(1, 30, 17, 15,'Short'),
+(1, 30, 18, 15,'Short'),
+(1, 30, 19, 15,'Short'),
+(1, 30, 20, 15,'Short'),
+(1, 30, 21, 15,'Short')
+";
 if (mysqli_multi_query($conn, $sql)) {
     echo "New records created successfully";
 } else {
