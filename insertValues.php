@@ -10,394 +10,138 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }*/
-include("connect.php");
-$conn;
+$conn = mysqli_connect("localhost","rpowers8","rpowers8","rpowers8");
+
+$sql = "INSERT INTO inventory (rowNumber, seat, typeof, price, avail)
+VALUES (1, 'A', 'First', 250.00, 0),
+       (1, 'B', 'First', 250.00, 0),
+       (1, 'C', 'First', 250.00, 0),
+       (1, 'D', 'First', 250.00, 1),
+       (2, 'A', 'First', 250.00, 1),
+       (2, 'B', 'First', 250.00, 0),
+       (2, 'C', 'First', 250.00, 0),
+       (2, 'D', 'First', 250.00, 0),
+       (3, 'A', 'First', 250.00, 1),
+       (3, 'B', 'First', 250.00, 0),
+       (3, 'C', 'First', 250.00, 0),
+       (3, 'D', 'First', 250.00, 0),
+       (4, 'A', 'Comfort', 120.00, 0),
+       (4, 'B', 'Comfort', 120.00, 0),
+       (4, 'C', 'Comfort', 120.00, 1),
+       (4, 'D', 'Comfort', 120.00, 0),
+       (5, 'A', 'Comfort', 120.00, 0),
+       (5, 'B', 'Comfort', 120.00, 0),
+       (5, 'C', 'Comfort', 120.00, 0),
+       (5, 'D', 'Comfort', 120.00, 0),
+       (6, 'A', 'Comfort', 120.00, 0),
+       (6, 'B', 'Comfort', 120.00, 0),
+       (6, 'C', 'Comfort', 120.00, 0),
+       (6, 'D', 'Comfort', 120.00, 0),
+       (6, 'E', 'Comfort', 120.00, 0),
+       (6, 'F', 'Comfort', 120.00, 1),
+       (7, 'A', 'Comfort', 120.00, 0),
+        (7, 'B', 'Comfort', 120.00, 0),
+        (7, 'C', 'Comfort', 120.00, 0),
+        (7, 'D', 'Comfort', 120.00, 0),
+        (7, 'E', 'Comfort', 120.00,1),
+        (7, 'F', 'Comfort', 120.00,1),
+        (8, 'A', 'Comfort', 120.00, 0),
+        (8, 'B', 'Comfort', 120.00, 0),
+        (8, 'C', 'Comfort', 120.00, 0),
+        (8, 'D', 'Comfort', 120.00, 0),
+        (8, 'E', 'Comfort', 120.00, 0),
+        (8, 'F', 'Comfort', 120.00, 0),
+        (9, 'A', 'Comfort', 120.00, 0),
+        (9, 'B', 'Comfort', 120.00, 1),
+        (9, 'C', 'Comfort', 120.00, 0),
+        (9, 'D', 'Comfort', 120.00, 0),
+        (9, 'E', 'Comfort', 120.00, 0),
+        (9, 'F', 'Comfort', 120.00, 0),
+        (10, 'A', 'Basic', 75.00, 0),
+        (10, 'B', 'Basic', 75.00, 0),
+        (10, 'C', 'Basic', 75.00, 0),
+        (10, 'D', 'Basic', 75.00, 0),
+        (10, 'E', 'Basic', 75.00, 0),
+        (10, 'F', 'Basic', 75.00, 1),
+        (11, 'A', 'Basic', 75.00, 0),
+        (11, 'B', 'Basic', 75.00, 0),
+        (11, 'C', 'Basic', 75.00, 0),
+        (11, 'D', 'Basic', 75.00, 0),
+        (11, 'E', 'Basic', 75.00, 0),
+        (11, 'F', 'Basic', 75.00, 0),
+        (12, 'A', 'Basic', 75.00, 0),
+        (12, 'B', 'Basic', 75.00, 1),
+        (12, 'C', 'Basic', 75.00, 0),
+        (12, 'D', 'Basic', 75.00, 0),
+        (12, 'E', 'Basic', 75.00, 0),
+        (12, 'F', 'Basic', 75.00, 0),
+        (13, 'A', 'Basic', 75.00, 0),
+        (13, 'B', 'Basic', 75.00, 0),
+        (13, 'C', 'Basic', 75.00, 1),
+        (13, 'D', 'Basic', 75.00, 0),
+        (13, 'E', 'Basic', 75.00, 0),
+        (13, 'F', 'Basic', 75.00, 0),
+        (14, 'A', 'Basic', 75.00, 0),
+        (14, 'B', 'Basic', 75.00, 1),
+        (14, 'C', 'Basic', 75.00, 1),
+        (14, 'D', 'Basic', 75.00, 1),
+        (14, 'E', 'Basic', 75.00, 0),
+        (14, 'F', 'Basic', 75.00, 0),
+        (15, 'A', 'Basic', 75.00, 0),
+        (15, 'B', 'Basic', 75.00, 1),
+        (15, 'C', 'Basic', 75.00, 1),
+        (15, 'D', 'Basic', 75.00, 0),
+        (15, 'E', 'Basic', 75.00, 0),
+        (15, 'F', 'Basic', 75.00, 0),
+        (16, 'A', 'Basic', 75.00, 0),
+        (16, 'B', 'Basic', 75.00, 0),
+        (16, 'C', 'Basic', 75.00, 1),
+        (16, 'D', 'Basic', 75.00, 0),
+        (16, 'E', 'Basic', 75.00, 0),
+        (16, 'F', 'Basic', 75.00, 0),
+        (17, 'A', 'Basic', 75.00, 0),
+        (17, 'B', 'Basic', 75.00, 1),
+        (17, 'C', 'Basic', 75.00, 0),
+        (17, 'D', 'Basic', 75.00, 0),
+        (17, 'E', 'Basic', 75.00, 1),
+        (17, 'F', 'Basic', 75.00, 0),
+        (18, 'A', 'Basic', 75.00, 0),
+        (18, 'B', 'Basic', 75.00, 0),
+        (18, 'C', 'Basic', 75.00, 0),
+        (18, 'D', 'Basic', 75.00, 1),
+        (18, 'E', 'Basic', 75.00, 0),
+        (18, 'F', 'Basic', 75.00, 0),
+        (19, 'A', 'Basic', 75.00, 0),
+        (19, 'B', 'Basic', 75.00, 0),
+        (19, 'C', 'Basic', 75.00, 0),
+        (19, 'D', 'Basic', 75.00, 1),
+        (19, 'E', 'Basic', 75.00, 0),
+        (19, 'F', 'Basic', 75.00, 0),
+        (20, 'A', 'Basic', 75.00, 0),
+        (20, 'B', 'Basic', 75.00, 0),
+        (20, 'C', 'Basic', 75.00, 0),
+        (20, 'D', 'Basic', 75.00, 0),
+        (20, 'E', 'Basic', 75.00, 1),
+        (20, 'F', 'Basic', 75.00, 0),
+        (21, 'A', 'Basic', 75.00, 0),
+        (21, 'B', 'Basic', 75.00, 0),
+        (21, 'C', 'Basic', 75.00, 0),
+        (21, 'D', 'Basic', 75.00, 0),
+        (21, 'E', 'Basic', 75.00, 0),
+        (21, 'F', 'Basic', 75.00, 0)";
+
+
+$sql2 = "INSERT INTO customer (firstname, lastname, email, username, passwords)
+VALUES ('John', 'Doe', 'johnd@gmail.com', 'johnd', '1234'),
+('Jane', 'Doe', 'janed@gmail.com', 'janed', '0000')";
 
-$sql = "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (1, 'A', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (1, 'B', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (1, 'C', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (1, 'D', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (1, 'E', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (1, 'F', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (2, 'A', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (2, 'B', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (2, 'C', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (2, 'D', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (2, 'E', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (2, 'F', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (3, 'A', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (3, 'B', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (3, 'C', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (3, 'D', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (3, 'E', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (3, 'F', 'First', 250.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (4, 'A', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (4, 'B', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (4, 'C', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (4, 'D', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (4, 'E', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (4, 'F', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (5, 'A', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (5, 'B', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (5, 'C', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (5, 'D', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (5, 'E', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (5, 'F', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (6, 'A', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (6, 'B', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (6, 'C', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (6, 'D', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (6, 'E', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (6, 'F', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (7, 'A', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (7, 'B', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (7, 'C', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (7, 'D', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (7, 'E', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (7, 'F', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (8, 'A', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (8, 'B', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (8, 'C', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (8, 'D', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (8, 'E', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (8, 'F', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (9, 'A', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (9, 'B', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (9, 'C', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (9, 'D', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (9, 'E', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (9, 'F', 'Comfort', 120.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (10, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (10, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (10, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (10, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (10, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (10, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (11, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (11, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (11, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (11, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (11, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (11, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (12, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (12, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (12, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (12, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (12, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (12, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (13, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (13, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (13, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (13, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (13, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (13, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (14, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (14, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (14, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (14, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (14, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (14, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (15, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (15, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (15, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (15, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (15, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (15, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (16, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (16, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (16, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (16, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (16, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (16, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (17, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (17, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (17, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (17, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (17, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (17, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (18, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (18, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (18, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (18, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (18, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (18, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (19, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (19, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (19, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (19, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (19, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (19, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (20, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (20, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (20, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (20, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (20, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (20, 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (21, 'A', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (21, 'B', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (21, 'C', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (21, 'D', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES (21, 'E', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO inventory (rowNumber, seat, typeof, price)
-VALUES ('21', 'F', 'Basic', 75.00)";
-
-$sql .= "INSERT INTO customer (firstname, lastname, email, username, passwords)
-VALUES ('John', 'Doe', 'johnd@gmail.com', 'johnd', '1234')";
-
-$sql .= "INSERT INTO customer (firstname, lastname, email, username, passwords)
-VALUES ('Jane', 'Doe', 'janed@gmail.com', 'janed', '0000')";
 
 if (mysqli_multi_query($conn, $sql)) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+if (mysqli_multi_query($conn, $sql2)) {
     echo "New records created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

@@ -25,49 +25,54 @@
 <body>
 
 <?php
-include("connect.php");
-$conn;
+$servername = "localhost";
+$username2 = "rpowers8";
+$password = "rpowers8";
+$dbname = "rpowers8";
+$conn = mysqli_connect($servername,$username2,$password,$dbname);
 
 $sql1 = "SELECT id, firstname, lastname, email, username, passwords FROM customer";
 $result1 = $conn->query($sql1);
 echo "<h3>Customers</h3>";
 if ($result1->num_rows > 0) {
      // output data of each row
-	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Password</th></tr>";
+	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Username</th><th>Password</th></tr>";
      while($row1 = $result1->fetch_assoc()) {
 		 $id=$row1["id"];
 		 $firstName=$row1["firstname"];
 		 $lastName=$row1["lastname"];
 		 $email=$row1["email"];
+		 $username=$row1["username"];
 		 $passwords=$row1["passwords"];
 
-         echo "<tr><td>".$id."</td><td>".$firstName."</td><td>".$lastName."</td><td>".$email."</td><td>".$passwords."</td></tr>";
+         echo "<tr><td>".$id."</td><td>".$firstName."</td><td>".$lastName."</td><td>".$email."</td><td>".$username."</td><td>".$passwords."</td></tr>";
      }
 	 echo "</table>";
 } else {
      echo "0 results";
 }
 
-$sql2 = "SELECT id, rowNumber, seat, typeof, price FROM inventory";
+$sql2 = "SELECT id, rowNumber, seat, typeof, price, avail FROM inventory";
 $result2 = $conn->query($sql2);
 echo "<h3>Seats</h3>";
 if ($result2->num_rows > 0) {
      // output data of each row
-	echo "<table><tr><th>ID</th><th>Row</th><th>Seat</th><th>Type</th><th>Price($)</th></tr>";
+	echo "<table><tr><th>ID</th><th>Row</th><th>Seat</th><th>Type</th><th>Price($)</th><th>Availablity</th></tr>";
      while($row2 = $result2->fetch_assoc()) {
 		 $id1=$row2["id"];
 		 $rowNumber=$row2["rowNumber"];
 		 $seat=$row2["seat"];
 		 $type=$row2["typeof"];
 		 $price=$row2["price"];
-         echo "<tr><td>".$id1."</td><td>".$rowNumber."</td><td>".$seat."</td><td>".$type."</td><td>".$price."</td></tr>";
+		 $avail=$row2["avail"];
+         echo "<tr><td>".$id1."</td><td>".$rowNumber."</td><td>".$seat."</td><td>".$type."</td><td>".$price."</td><td>".$avail."</td></tr>";
      }
 	 echo "</table>";
 } else {
      echo "0 results";
 }
 
-$sql3 = "SELECT id, firstname, lastname, rowNumber, seat, typeof, price, email FROM inventory";
+$sql3 = "SELECT id, firstname, lastname, rowNumber, seat, typeof, price, email FROM orders";
 $result3 = $conn->query($sql3);
 echo "<h3>Orders</h3>";
 if ($result3->num_rows > 0) {
@@ -90,7 +95,7 @@ if ($result3->num_rows > 0) {
 }
 
 $conn->close();
-?>  
+?>
 </body>
 
 </html>

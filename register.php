@@ -68,9 +68,13 @@ a {
 </style>
 </head>
 <body>
+  <a href="main.php">Back to Main Page</a>
 <?php
-include("connect.php");
-$conn;
+$servername = "localhost";
+$username = "rpowers8";
+$password = "rpowers8";
+$dbname = "rpowers8";
+$conn = mysqli_connect($servername,$username,$password,$dbname);
 if (isset($_REQUEST['uname'])) {
     $username = stripslashes($_REQUEST['uname']);
     //escapes special characters in a string
@@ -88,8 +92,8 @@ if (isset($_REQUEST['uname'])) {
         $result   = mysqli_query($conn, $query);
         if ($result) {
             echo "<div class='form'>
-                <h3>You are registered successfully.</h3><br/>
-                <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  <meta http-equiv='refresh' content='1; URL=main.php '/>
+
                 </div>";
         } else {
             echo "<div class='form'>
@@ -98,7 +102,7 @@ if (isset($_REQUEST['uname'])) {
                   </div>";
         }
     } else {
-?>   
+?>
 <form action="" method = "post">
   <div class="container">
     <h1>Register Form.</h1>
@@ -127,7 +131,7 @@ if (isset($_REQUEST['uname'])) {
 
     <button type="submit" name = "register" class="registerbtn">Register</button>
   </div>
-  
+
   <div class="container signin">
     <p>Already have an account? <a href="login.php">Sign in</a>.</p>
   </div>

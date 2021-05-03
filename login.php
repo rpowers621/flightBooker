@@ -67,7 +67,7 @@ span.psw {
 </style>
 </head>
 <body>
-
+<a href="main.php">Back to Main Page</a>
 <h2>Login Form</h2>
 
 <form action="process.php" method="post">
@@ -96,4 +96,3 @@ span.psw {
 
 </body>
 </html>
-

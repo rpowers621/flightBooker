@@ -1,9 +1,7 @@
-<?php 
+<?php
     session_start();
-    if(isset($_GET['logout']))
-    {
-        session_destroy();
-        header("location:main.php");
-    }
+    session_destroy();
+    header("location:main.php");
+
 
 ?>
