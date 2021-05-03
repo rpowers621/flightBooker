@@ -113,6 +113,27 @@ if ($result4->num_rows > 0) {
      echo "0 results";
 }
 $conn->close();
+	
+$sql5 = "SELECT id, firstname, lastname, email, username, passwords FROM admins";
+$result5 = $conn->query($sql5);
+echo "<h3>Adminstrators</h3>";
+if ($result5->num_rows > 0) {
+     // output data of each row
+	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Username</th><th>Password</th></tr>";
+     while($row5 = $result5->fetch_assoc()) {
+		 $id5=$row5["id"];
+		 $firstName5=$row5["firstname"];
+		 $lastName5=$row5["lastname"];
+		 $email5=$row5["email"];
+		 $username5=$row5["username"];
+		 $passwords5=$row5["passwords"];
+
+         echo "<tr><td>".$id5."</td><td>".$firstName5."</td><td>".$lastName5."</td><td>".$email5."</td><td>".$username5."</td><td>".$passwords5."</td></tr>";
+     }
+	 echo "</table>";
+} else {
+     echo "0 results";
+}
 ?>
 </body>
 
