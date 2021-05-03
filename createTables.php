@@ -46,6 +46,13 @@ $sql3 = "CREATE TABLE orders (
 	email VARCHAR(50)
 )";
 
+$sql4 = "CREATE TABLE parking (
+	available INT(1),
+	price INT(5) NOT NULL, 
+	spotnumber INT(32),
+	lengthoftime INT(60),
+	type VARCHAR(30)
+)";
 if (mysqli_multi_query($conn, $sql)) {
     echo "New records created successfully";
 } else {
