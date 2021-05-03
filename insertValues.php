@@ -168,6 +168,10 @@ if (mysqli_multi_query($conn, $sql2)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
+if (mysqli_multi_query($conn, $sql4)) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 mysqli_close($conn);
 ?>
