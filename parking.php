@@ -8,6 +8,9 @@
 table, th, td {
   border: 3px solid white;
   border-spacing: 15px;
+  padding: 5em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 </style>
   </head>
@@ -45,7 +48,7 @@ table, th, td {
     <th>Short</th>
   </tr>
   <tr>
-    <td id  = "1" onclick="checkAvail('1')">1</td>
+    <td style="background-image: url('Handicap.jpg');" id  = "1" onclick="checkAvail('1')">1</td></div>
     <td id = "4" onclick="checkAvail('4')">4</td>
     <td id = "7" onclick="checkAvail('7')">7</td>
 	<td id = "10" onclick="checkAvail('10')">10</td>
@@ -54,7 +57,7 @@ table, th, td {
 	<td id = "19" onclick="checkAvail('19')">19</td>
   </tr>
   <tr>
-    <td id = "2" onclick="checkAvail('2')">2</td>
+    <td style="background-image: url('Handicap.jpg');" id  = "2" onclick="checkAvail('2')">1</td></div>
     <td id = "5" onclick="checkAvail('5')">5</td>
     <td id = "8" onclick="checkAvail('8')">8</td>
 	<td id = "11" onclick="checkAvail('11')">11</td>
@@ -63,7 +66,7 @@ table, th, td {
 	<td id = "20" onclick="checkAvail('20')">20</td>
   </tr>
   <tr>
-    <td id = "3" onclick="checkAvail('3')">3</td>
+    <td style="background-image: url('Handicap.jpg');" id  = "3" onclick="checkAvail('3')">1</td></div>
     <td id = "6" onclick="checkAvail('6')">6</td>
     <td id = "9" onclick="checkAvail('9')">9</td>
 	<td id = "12" onclick="checkAvail('12')">12</td>
