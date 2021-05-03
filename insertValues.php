@@ -158,6 +158,11 @@ VALUES (1, 60, 1, 30,'Handicap'),
 (0, 30, 20, 15,'Short'),
 (0, 30, 21, 15,'Short')
 ";
+
+$sql5 = "INSERT INTO admins (firstname, lastname, email, username, passwords)
+VALUES ('Adam', 'Dawson', 'adam@gmail.com', 'adam', 'pass'),
+('Lois', 'Lane', 'lois@gmail.com', 'loislane', 'admin')";
+
 if (mysqli_multi_query($conn, $sql)) {
     echo "New records created successfully";
 } else {
@@ -173,5 +178,13 @@ if (mysqli_multi_query($conn, $sql4)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
+if (mysqli_multi_query($conn, $sql5)) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql5 . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
 mysqli_close($conn);
 ?>
