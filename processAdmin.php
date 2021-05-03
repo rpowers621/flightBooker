@@ -14,7 +14,7 @@ if(isset($_POST['login']))
         $_SESSION["username"] = $row['username'];
         $_SESSION["password"]=$row['passwords'];
 
-        header("Location: main.php");
+        header("Location: admin.php");
     }
     else
     {
