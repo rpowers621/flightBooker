@@ -13,7 +13,7 @@
   <body>
       <a href="main.php">Back to Main Page</a>
       <div class="header">
-        <a href="#">Book Parking</a>
+        <a href="parking.php">Book Parking</a>
 
         <a href="register.php">Sign Up</a>
 
