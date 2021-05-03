@@ -7,10 +7,33 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Payment</title>
   </head>
   <body>
+      <a href="main.php">Back to Main Page</a>
+      <div class="header">
+        <a href="#">Book Parking</a>
+
+        <a href="register.php">Sign Up</a>
+
+        <a href="login.php">Login</a>
+
+        <a href="#">Cart</a>
+
+       <a href="profile.php"> <?php
+
+       session_start();
+         $user = $_SESSION['username'];
+       echo $user;  ?> <img id="logo" src="gsu.jpeg" width="48" height="48"> </a>
+     </div>
+      </div>
+    <?php
+      $total = $_POST['total'];
+      echo "<h4> Amount Due: $".$total."</h4>";
+
+
+    ?>
 	<div class = "card">
 		<form>
 		<h1 class = "card__title"> Enter Billing Address</h1>
@@ -51,6 +74,8 @@
 			>
 			</div>
         <h1 class="card__title">Enter Payment Information</h1>
+
+
 		<div class = "card_row">
 			<label for="cardName" class="card__label">Name on Card</label>
 			<input

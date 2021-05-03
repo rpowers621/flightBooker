@@ -59,7 +59,6 @@ img#logo{
 .seat-class{
   display: inline-block;
   vertical-align: middle;
-  border: 1px solid red;
   margin-left:15%;
 }
 #basic{
@@ -103,7 +102,6 @@ p.price-B{
 .seating{
   margin-left: 30%;
   text-align: center;
-  border: 1px solid red;
   width: 500px;
 
 }
@@ -127,4 +125,21 @@ td{
   border: 1px solid white;
   width: 30px;
   height: 30px;
+}
+.checkout{
+  margin-top: 15%;
+  margin-left: 25%;
+  height: 1000px;
+  width: 500px;
+  font-size: 30px;
+  border: 1px solid red;
+
+}
+
+.card{
+  margin-top: 15%;
+  margin-left: 25%;
+  height: 1000px;
+  width: 500px;
+  border: 1px solid red;
 }

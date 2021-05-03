@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="conatiner">
+      <a href="main.php">Back to Main Page</a>
       <div class="header">
 
         <?php
@@ -77,7 +78,7 @@
           </tr>
 
           <tr class="first-class">
-            <td id="A1" onclick="checkAvail('A', '1')"></td>
+            <td id="A1" onclick="checkAvail('A1')"></td>
             <td id="B1" onclick="checkAvail('B1')"></td>
             <td><pre>   1   </pre> </td>
             <td id="C1" onclick="checkAvail('C1')"></td>
@@ -287,9 +288,10 @@
 
         <div class="put-to-cart">
           <div id="selected-seat"> </div>
-          <button type="button" name="button" onclick="toAddOrNotToAdd">Add to Cart</button>
-          <button type="button" name="button">Add Parking</button>
-          <button type="button" name="button">Continue to Checkout</button>
+          <form id="select-seat" name="select-seat" method="post" action="checkout.php">
+              <input type="hidden" name="seat-selected" id="seat-selected" value="">
+              <input type="submit" name="" value="Add to Cart">
+            </form>
         </div>
       </div>
 
@@ -303,8 +305,6 @@
     $conn = mysqli_connect($servername,$username2,$password,$dbname);
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }else{
-    echo "Connected successfully";
     }
     $sql = "SELECT rowNumber, seat, avail FROM inventory";
     $result = mysqli_query($conn, $sql);
@@ -326,18 +326,13 @@
          }
     }?>
     <script type="text/javascript">
-          const seat
+          var seat;
 
           function checkAvail(id){
-             seat = id;
+            seat = id;
             document.getElementById("selected-seat").innerHTML= seat+" is available";
+            document.getElementById('seat-selected').value = seat;
           }
-
-          function toAddOrNotToAdd(){
-
-          }
-
-
     </script>
     <?php
      $conn->close();
