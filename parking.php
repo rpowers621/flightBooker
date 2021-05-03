@@ -120,9 +120,6 @@ table, th, td {
             document.getElementById('seat-selected').value = spot;
           }
 
-          function toAddOrNotToAdd(){
-
-          }
 
 
     </script>

@@ -1,31 +1,28 @@
-<?php
-include("connect.php");
-$conn;
 
+<?php
+$servername = "localhost";
+$username2 = "rpowers8";
+$password = "rpowers8";
+$dbname = "rpowers8";
+$conn = mysqli_connect($servername,$username2,$password,$dbname);
 session_start();
-if(isset($_POST['login'])){
-    if(empty($_POST['uname']) || empty($_POST['psw'])){
-        header("location:login.php?Empty = Please Fill in the Blanks");
-    }else{
-        $myusername = mysqli_real_escape_string($conn,$_POST['uname']);
-        $mypassword = mysqli_real_escape_string($conn,$_POST['psw']);
-        $query = "SELECT username, passwords FROM customer WHERE username = '$myusername' and passwords='$mypassword'";
-        $result = mysqli_query($conn, $query);
-        $count = mysqli_num_rows($result);
+if(isset($_POST['login']))
+{
+  $myusername = $_POST['uname'];
+  $mypassword = $_POST['psw'];
 
-        if($count==1){
-            $_SESSION['username']=$myusername;
-            header("location:main.php");
-        }else{
-?>
-        <script type = "text/javascript">
-            alert("Incorrect Username or Password");
-            window.history.back();
-        </script>
-<?php
-        }
+    $sql=mysqli_query($conn,"SELECT * FROM customer where username='$myusername' and passwords='$mypassword'");
+    $row  = mysqli_fetch_array($sql);
+    if(is_array($row))
+    {
+        $_SESSION["username"] = $row['username'];
+        $_SESSION["password"]=$row['passwords'];
+
+        header("Location: main.php");
     }
-}else{
-    echo 'Not working';
+    else
+    {
+        echo "Invalid Email ID/Password";
+    }
 }
-?>
+    ?>
