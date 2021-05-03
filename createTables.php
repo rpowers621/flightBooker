@@ -53,6 +53,16 @@ $sql4 = "CREATE TABLE parking (
 	lengthoftime INT(60),
 	type VARCHAR(30)
 )";
+
+$sql5 = "CREATE TABLE admins (
+	id INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	username VARCHAR(30) NOT NULL,
+	passwords VARCHAR(30) NOT NULL
+)";
+
 if (mysqli_multi_query($conn, $sql)) {
     echo "New records created successfully";
 } else {
@@ -67,6 +77,18 @@ if (mysqli_multi_query($conn, $sql3)) {
     echo "New records created successfully";
 } else {
     echo "Error: " . $sql3 . "<br>" . mysqli_error($conn);
+}
+
+if (mysqli_multi_query($conn, $sql4)) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql4 . "<br>" . mysqli_error($conn);
+}
+
+if (mysqli_multi_query($conn, $sql5)) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql5 . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
 ?>
