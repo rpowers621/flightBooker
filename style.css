@@ -136,10 +136,72 @@ td{
 
 }
 
-.card{
-  margin-top: 15%;
-  margin-left: 25%;
-  height: 1000px;
-  width: 500px;
-  border: 1px solid red;
+
+.card {
+  background: blue;
+  backdrop-filter: blur(0.8rem);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: white;
+  margin: 1rem 0;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card__col {
+  padding-right: 2rem;
+}
+
+.card__input {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.card__input--large {
+  font-size: 2rem;
+}
+
+.card__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: none;
+}
+
+.card__input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.card__label {
+  display: block;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+}
+
+.card__brand {
+  font-size: 3rem;
+  color: #fff;
+  min-width: 100px;
+  min-height: 75px;
+  text-align: right;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+.thank-you{
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 20px;
+  text-decoration: underline;
+  color: white;
 }

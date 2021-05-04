@@ -15,7 +15,7 @@
 
      <a href="login.php">Login</a>
 
-     <a href="#">Cart</a>
+     <a href="admin.php">Admin</a>
 
     <a href="profile.php"> <?php
 
@@ -37,12 +37,12 @@
 
 
     $sSeat =  $_POST['seat-selected'];
-    $seat = substr($sSeat,0);
-    $row = substr($sSeat,1);
-    $change = 1;
+    $seat = substr($sSeat,0,1);
+    $row = substr($sSeat,1,2);
 
 
-    $sql = "UPDATE inventory SET avail= '1' WHERE seat = '".$seat."' and rowNumber = '".$row."'";
+
+    $sql = "UPDATE inventory SET avail= 1 WHERE seat = '".$seat."' AND rowNumber = '".$row."'";
 
 
    mysqli_query($conn, $sql);
@@ -59,8 +59,9 @@
   $tax =7;
   $taxes =$price * $tax/100;
   $total = $taxes + $price;
-
-
+  $user = $_SESSION['username'];
+  echo $user;
+  echo "<br>";
   echo "Your seat ".$sSeat." will cost:";
   echo "<br>";
   echo "<br>";
@@ -81,6 +82,7 @@
 <form class="" action="payment.php" method="post">
   <p>If this amount is correct please proceed to payment</p>
   <input type="hidden" name="total" value="<?php echo $total;?> ">
+  <input type="hidden" name="seat" value="<?php echo $sSeat;?> ">
   <input id ="checkButton"type="submit" name="" value="Continue">
 </form>
          </div>

@@ -15,7 +15,7 @@
 
         <a href="login.php">Login</a>
 
-        <a href="#">Admin</a>
+         <a href="admin.php">Admin</a>
 
 
         <a href="profile.php"> <?php

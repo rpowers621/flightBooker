@@ -8,7 +8,7 @@
 table, th, td {
   border: 3px solid white;
   border-spacing: 15px;
-  padding: 5em;
+  padding: 3em;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -25,7 +25,7 @@ table, th, td {
 
         <a href="login.php">Login</a>
 
-        <a href="#">Cart</a>
+         <a href="admin.php">Admin</a>
 
 
         <a href="profile.php"> <?php
@@ -117,6 +117,8 @@ table, th, td {
           function checkAvail(id){
             spot = id;
             document.getElementById("selected-spot").innerHTML= "Parking spot "+spot+" is available";
+            var cell2 = document.getElementById(id);
+            cell2.style.background="yellow";
             document.getElementById('seat-selected').value = spot;
           }
 

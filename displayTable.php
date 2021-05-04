@@ -77,7 +77,7 @@ $result3 = $conn->query($sql3);
 echo "<h3>Orders</h3>";
 if ($result3->num_rows > 0) {
      // output data of each row
-	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Row</th><th>Seat</th><th>Type</th><th>Price($)</th><th>Email/th></tr>";
+	echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Row</th><th>Seat</th><th>Type</th><th>Price($)</th><th>Email</th></tr>";
      while($row3 = $result3->fetch_assoc()) {
 		 $id2=$row3["id"];
 		 $firstName1=$row3["firstname"];
@@ -113,7 +113,7 @@ if ($result4->num_rows > 0) {
      echo "0 results";
 }
 $conn->close();
-	
+
 $sql5 = "SELECT id, firstname, lastname, email, username, passwords FROM admins";
 $result5 = $conn->query($sql5);
 echo "<h3>Adminstrators</h3>";

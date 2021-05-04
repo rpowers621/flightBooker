@@ -43,12 +43,12 @@ $sql3 = "CREATE TABLE orders (
 	seat VARCHAR(30) NOT NULL,
 	typeof VARCHAR(30) NOT NULL,
 	price INT(5) NOT NULL,
-	email VARCHAR(50)
+	email VARCHAR(50) NOT NULL
 )";
 
 $sql4 = "CREATE TABLE parking (
 	available INT(1),
-	price INT(5) NOT NULL, 
+	price INT(5) NOT NULL,
 	spotnumber INT(32),
 	lengthoftime INT(60),
 	type VARCHAR(30)

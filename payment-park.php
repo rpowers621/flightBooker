@@ -19,18 +19,20 @@
 
         <a href="login.php">Login</a>
 
-        <a href="#">Cart</a>
+        <a href="admin.php">Admin</a>
 
        <a href="profile.php"> <?php
 
        session_start();
+
          $user = $_SESSION['username'];
+         $sSeat =$_POST['seat'];
        echo $user;  ?> <img id="logo" src="gsu.jpeg" width="48" height="48"> </a>
      </div>
       </div>
 
 	<div class = "card">
-		<form>
+		<form  action="proPayParking.php" method="post">
 		<h1 class = "card__title"> Enter Billing Address</h1>
 			<div class = "card_row">
 			<label for="address" class="card__label">Address</label>
@@ -113,6 +115,8 @@
               id="cardCcv"
               placeholder="xxx"
             />
+            <input type="hidden" name="total" value="<?php echo $total;?> ">
+            <input type="hidden" name="seat" value="<?php echo $sSeat;?> ">
             <input type="submit" name="" value="Place Order">
           </div>
           <div class="card__col card__brand"><i id="cardBrand"></i></div>

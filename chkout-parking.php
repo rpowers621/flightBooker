@@ -55,7 +55,9 @@
   $taxes =$price * $tax/100;
   $total = $taxes + $price;
 
-
+  $user = $_SESSION['username'];
+  echo $user;
+  echo "<br>";
   echo "Your parking spot ".$sSeat." will cost:";
   echo "<br>";
   echo "<br>";
@@ -73,9 +75,10 @@
 
     mysqli_close($conn);
      ?>
-<form class="" action="payment.php" method="post">
+<form class="" action="payment-parking.php" method="post">
   <p>If this amount is correct please proceed to payment</p>
   <input type="hidden" name="total" value="<?php echo $total;?> ">
+    <input type="hidden" name="seat" value="<?php echo $sSeat;?> ">
   <input id ="checkButton"type="submit" name="" value="Continue">
 </form>
          </div>
