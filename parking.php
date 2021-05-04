@@ -25,7 +25,7 @@ table, th, td {
 
         <a href="login.php">Login</a>
 
-         <a href="admin.php">Admin</a>
+           <a href="loginAdmin.php">Admin</a>
 
 
         <a href="profile.php"> <?php

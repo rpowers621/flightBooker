@@ -186,5 +186,4 @@ if (mysqli_multi_query($conn, $sql5)) {
 }
 
 mysqli_close($conn);
-mysqli_close($conn);
 ?>

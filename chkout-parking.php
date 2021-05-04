@@ -14,7 +14,7 @@
 
      <a href="login.php">Login</a>
 
-     <a href="#">Cart</a>
+       <a href="loginAdmin.php">Admin</a>
 
     <a href="profile.php"> <?php
 

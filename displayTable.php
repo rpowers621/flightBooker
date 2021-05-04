@@ -23,7 +23,7 @@
 	</head>
 
 <body>
-
+    <a href="main.php">Back to Main Page</a>
 <?php
 $servername = "localhost";
 $username2 = "rpowers8";
@@ -112,7 +112,7 @@ if ($result4->num_rows > 0) {
 } else {
      echo "0 results";
 }
-$conn->close();
+
 
 $sql5 = "SELECT id, firstname, lastname, email, username, passwords FROM admins";
 $result5 = $conn->query($sql5);
@@ -134,6 +134,7 @@ if ($result5->num_rows > 0) {
 } else {
      echo "0 results";
 }
+$conn->close();
 ?>
 </body>
 

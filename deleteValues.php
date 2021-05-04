@@ -13,7 +13,7 @@ if (!$conn) {
 }
 
 // sql to delete a record
-$sql = "DELETE FROM orders WHERE id =4";
+$sql = "DELETE FROM admins WHERE firstname ='Lois'";
 
 if (mysqli_query($conn, $sql)) {
   echo "Record deleted successfully";

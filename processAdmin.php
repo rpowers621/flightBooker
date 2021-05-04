@@ -1,6 +1,9 @@
 <?php
-include("connect.php");
-$conn;
+$servername = "localhost";
+$username2 = "rpowers8";
+$password = "rpowers8";
+$dbname = "rpowers8";
+$conn = mysqli_connect($servername,$username2,$password,$dbname);
 session_start();
 if(isset($_POST['login']))
 {
@@ -14,7 +17,7 @@ if(isset($_POST['login']))
         $_SESSION["username"] = $row['username'];
         $_SESSION["password"]=$row['passwords'];
 
-        header("Location: admin.php");
+        header("Location: displayTable.php");
     }
     else
     {
